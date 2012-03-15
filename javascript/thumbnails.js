@@ -20,6 +20,7 @@ function output_update(data, sText, xhr, $form) {
 	var imgData = $.parseJSON(data);
 	if(imgData["error"] === undefined) {
 		var appended_image = "<img src=\"assets/full_size/" + imgData["name"] + "\" />";
+		$('#uploaded').html("");
 		$('#uploaded').append(appended_image);
 	}
 }
