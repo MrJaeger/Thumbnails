@@ -8,7 +8,7 @@ $img = $_FILES['image_file']['tmp_name'];
 
 $upload = new SimpleImage($img);
 
-if($upload->getWidth(); > $MAX_WIDTH) {
+if($upload->getWidth() > $MAX_WIDTH) {
 	$upload->resizeToWidth($MAX_WIDTH);
 }
 
