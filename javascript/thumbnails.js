@@ -10,3 +10,7 @@ function validate(data, jqForm, options) {
 	var queryString = $('#upload_form').formSerialize(); 
 	return false;
 }
+
+function output_update() {
+	
+}
