@@ -15,7 +15,7 @@ if($upload->getWidth() > $MAX_WIDTH) {
 
 $target_path = "assets/full_size/".$file_name;
 
-if(move_uploaded_file($upload->output(), $target_path)) {
+if(move_uploaded_file($upload->image, $target_path)) {
     echo "OK";
 } else{
     echo "ERROR";
