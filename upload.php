@@ -18,6 +18,6 @@ $upload->save("assets/full_size/".$file_name, $upload->image_type);
 $data = array();
 $data['name'] = $file_name;
 
-echo $data;
+echo json_encode($data);
 
 ?>
