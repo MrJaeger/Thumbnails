@@ -7,10 +7,8 @@ $(function () {
 });
 
 function validate(data, jqForm, options) {
-	console.log("DATA", data);
-	var queryString = $('#upload_form').formSerialize(); 
-	console.log("QUERY STRING", queryString);
-	return true;
+	console.log("DATA", data[0]);
+	return false;
 }
 
 function output_update() {
