@@ -1,5 +1,5 @@
 <?php
 
-echo $_FILES[0];
+echo print_r($_FILES['image_file']);
 
 ?>
