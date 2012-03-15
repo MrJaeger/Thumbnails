@@ -1,7 +1,6 @@
 <?php
 
 echo $FILES['image_file'];
-echo $FILES['uploadedfile'];
 
 $target_path = "assets/full_size/";
 
