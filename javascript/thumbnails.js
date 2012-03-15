@@ -7,7 +7,6 @@ $(function () {
 });
 
 function validate(data, jqForm, options) {
-	console.log(data);
 	var imageRegExp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
 	if(data.length != 1 || !data[0]["value"]["fileName"].match(imageRegExp)) {
 		return false;
@@ -17,7 +16,9 @@ function validate(data, jqForm, options) {
 }
 
 function output_update(data, sText, xhr, $form) {
-	console.log(data);
+	console.log(data[name]);
+	console.log(data['name']);
+	console.log(data["name"]);
 	return false;
 	if(data["error"] === undefined) {
 		var appended_image = "<img src=\"assets/full_size/" + data["name"] + "\" />";
