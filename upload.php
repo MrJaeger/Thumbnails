@@ -1,18 +1,20 @@
 <?php
 
+require('./helpers/SimpleImage.php');
+
+$MAX_WIDTH = 900;
 $file_name = $_FILES['image_file']['name'];
 $img = $_FILES['image_file']['tmp_name'];
 
-list($height, $width) = getimagesize($img);
+$upload = new SimpleImage($img);
 
-echo $width;
-exit();
+if($upload->getWidth(); > $MAX_WIDTH) {
+	$upload->resizeToWidth($MAX_WIDTH);
+}
 
-$target_path = "assets/full_size/";
+$target_path = "assets/full_size/".$file_name;
 
-$target_path .= $file_name;
-
-if(move_uploaded_file($img, $target_path)) {
+if(move_uploaded_file($upload->output(), $target_path)) {
     echo "OK";
 } else{
     echo "ERROR";
