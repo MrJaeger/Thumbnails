@@ -17,15 +17,9 @@ function validate(data, jqForm, options) {
 }
 
 function output_update(data, sText, xhr, $form) {
-	console.log(typeof(data));
-	console.log(data.name);
-	console.log(data[0]);
-	console.log(data[name]);
-	console.log(data['name']);
-	console.log(data["name"]);
-	return false;
-	if(data["error"] === undefined) {
-		var appended_image = "<img src=\"assets/full_size/" + data["name"] + "\" />";
+	var imgData = $.parseJSON(data);
+	if(imgData["error"] === undefined) {
+		var appended_image = "<img src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#uploaded').append(appended_image);
 	}
 }
