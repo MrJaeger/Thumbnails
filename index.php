@@ -12,7 +12,7 @@
 		<div id="image_list"></div>
 		<form id="upload_form" action="upload.php" method="post">
 			<label>Picture to Upload:</label>
-			<input name="file" type="file" />
+			<input name="image_file" type="file" />
 			<input type="submit" value="Upload" />
 		</form>
 	</body>
