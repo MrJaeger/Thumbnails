@@ -6,9 +6,6 @@ $MAX_WIDTH = 900;
 $file_name = $_FILES['image_file']['name'];
 $img = $_FILES['image_file']['tmp_name'];
 
-echo print_r(getimagesize($img));
-exit();
-
 $upload = new SimpleImage($img);
 
 if($upload->getWidth() > $MAX_WIDTH) {
