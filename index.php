@@ -9,7 +9,7 @@
 	<body>
 		<h1>Thumbnails</h1>
 		<div id="image_list"></div>
-		<form action="upload.php" method="post">
+		<form id="upload_form" action="upload.php" method="post">
 			<label>Picture to Upload:</label>
 			<input name="file" type="file" />
 			<input type="submit" value="Upload" />
