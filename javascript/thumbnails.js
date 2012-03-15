@@ -1,6 +1,7 @@
 $(function () {
 	var options = {
 		beforeSubmit: validate,
+		type: 'json',
 		success: output_update
 	};
 	$('#upload_form').ajaxForm(options);
