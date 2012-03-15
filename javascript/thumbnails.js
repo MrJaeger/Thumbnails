@@ -1,6 +1,9 @@
 $(function () {
-	$('#upload_form').submit( function (data, e) {
-		console.log(data, e);
+	$('#upload_form').ajaxForm();
+	$('#upload_form').submit(function () {
+		var queryString = $('#myFormId').formSerialize(); 
+		console.log(queryString);
+		//$(this).ajaxSubmit();
 		return false;
 	});
 });
