@@ -17,5 +17,8 @@ function validate(data, jqForm, options) {
 }
 
 function output_update(data, sText, xhr, $form) {
-	console.log(""+data);
+	if(data["error"] === undefined) {
+		var appended_image = "<img src=\"assets/full_size/" + data["name"] "\" />";
+		$('#uploaded').append(appended_image);
+	}
 }
