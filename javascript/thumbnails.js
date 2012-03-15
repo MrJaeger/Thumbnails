@@ -7,11 +7,10 @@ $(function () {
 });
 
 function validate(data, jqForm, options) {
-	if(data.length != 1 || !data[0]["value"]["fileName"].match(/((.\.png$)|(.\.jpg$)|(.\.gif$))/)) {
-		console.log("WRONG");
+	var imageRegExp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
+	if(data.length != 1 || !data[0]["value"]["fileName"].match(imageRegExp)) {
 		return false;
 	} else {
-		console.log("OK");
 		return true;
 	}
 }
