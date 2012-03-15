@@ -13,7 +13,7 @@ if($upload->getWidth() > $MAX_WIDTH) {
 	$upload->resizeToWidth($MAX_WIDTH);
 }
 
-$upload->save($file_name, $upload->image_type);
+$upload->save("assets/full_size/".$file_name, $upload->image_type);
 
 exit();
 
