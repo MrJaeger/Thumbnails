@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Thumbnails Site</head>
+		<title>Thumbnails Site</title>
 	</head>
 	<body>
 		<h1>Thumbnails</h1>
