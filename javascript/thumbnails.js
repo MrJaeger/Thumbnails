@@ -16,5 +16,5 @@ function validate(data, jqForm, options) {
 }
 
 function output_update(data, sText, xhr, $form) {
-	console.log(data);
+	console.log(""+data);
 }
