@@ -6,18 +6,16 @@ $MAX_WIDTH = 900;
 $file_name = $_FILES['image_file']['name'];
 $img = $_FILES['image_file']['tmp_name'];
 
-$results = array();
-array_push($results, getimagesize($img));
-
 $upload = new SimpleImage();
-$upload->load(&$img);
+$upload->load($img);
 
 if($upload->getWidth() > $MAX_WIDTH) {
 	$upload->resizeToWidth($MAX_WIDTH);
 }
-array_push($results, getimagesize($img));
 
-echo print_r($results);
+$upload->save($file_name, $upload->image_type);
+
+exit();
 
 $target_path = "assets/full_size/".$file_name;
 
