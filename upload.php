@@ -1,5 +1,5 @@
 <?php
 
-echo $_FILES['image_file'][0];
+echo $_FILES[0];
 
 ?>
