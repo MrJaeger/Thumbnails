@@ -10,7 +10,7 @@ $results = array();
 array_push($results, getimagesize($img));
 
 $upload = new SimpleImage();
-$upload->load($img);
+$upload->load(&$img);
 
 if($upload->getWidth() > $MAX_WIDTH) {
 	$upload->resizeToWidth($MAX_WIDTH);
