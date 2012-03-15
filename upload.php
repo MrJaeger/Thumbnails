@@ -1,6 +1,6 @@
 <?php
 
-$target_path = "assets/full_size/"
+$target_path = "assets/full_size/";
 
 $target_path.= $FILES['image_file']['name'];
 
