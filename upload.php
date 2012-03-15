@@ -1,6 +1,6 @@
 <?php
 
-echo print_r($FILES['image_file']);
+echo print_r($FILES);
 
 $target_path = "assets/full_size/";
 
