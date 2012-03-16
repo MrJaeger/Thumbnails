@@ -8,8 +8,12 @@ form {
 	float: left;
 }
 
+#thumbnail_upload_button {
+	position: relative;
+	margin-top: 170px;
+}
+
 #thumbnail {
-	display: inline-block;
 	position: relative;
 	overflow: hidden;
 	width: 156px;
