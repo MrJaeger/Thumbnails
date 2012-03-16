@@ -1,4 +1,5 @@
 $(function () {
+	var main_height, main_width;
 	var options = {
 		beforeSubmit: validate,
 		type: 'json',
@@ -20,6 +21,8 @@ function validate(data, jqForm, options) {
 function output_update(data, sText, xhr, $form) {
 	var imgData = $.parseJSON(data);
 	if(imgData["error"] === undefined) {
+		main_height = imgData["height"];
+		main_width = imgData["width"];
 		var main_image = "<img id=\"main\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#uploaded').html("").append(main_image);
 		$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
@@ -29,5 +32,12 @@ function output_update(data, sText, xhr, $form) {
 }
 
 function update_thumbnail(img, selection) {
-	console.log(img);
+	var xScale = 156/selection.width;
+	var yScale = 156/selection.height;
+	$("#thumbnail > img").css({
+		width: Math.round(xScale * main_width) + 'px',
+		height: Math.round(yScale * main_height) + 'px',
+		marginLeft: '-' + Math.round(xScale * selection.x1) + 'px',
+		marginTop: '-' + Math.round(yScale * selection.y1) + 'px'
+	});
 }
