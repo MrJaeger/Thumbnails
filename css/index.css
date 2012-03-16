@@ -3,8 +3,12 @@ input {
 	margin: 10px 0px;
 }
 
-#uploaded, #thumbnail {
-	display: inline-block;
+#uploaded, #thumbnail, #thumbnail_upload_button {
+	float: left;
+}
+
+#thumbnail, #thumbnail_upload_button{
+	clear: both;
 }
 
 #thumbnail {

@@ -43,7 +43,7 @@ function output_update(data, sText, xhr, $form) {
 		var main_image = "<img id=\"main\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#uploaded').html("").append(main_image);
 		$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
-		var thumbnail_image = "<img style=\"position: relative; 'border': '2px solid black';\" src=\"assets/full_size/" + imgData["name"] + "\" />";
+		var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#thumbnail > img').remove();
 		$('#thumbnail').append(thumbnail_image);
 	}
