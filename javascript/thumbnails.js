@@ -21,7 +21,12 @@ function output_update(data, sText, xhr, $form) {
 	if(imgData["error"] === undefined) {
 		var main_image = "<img id=\"main\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#uploaded').html("").append(main_image);
+		$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
 		var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + imgData["name"] + "\" />"
 		$('#thumbnail').html("").append(thumbnail_image);
 	}
+}
+
+function update_thumbnail(img, selection) {
+	
 }
