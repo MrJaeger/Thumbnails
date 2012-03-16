@@ -8,6 +8,7 @@ $(function () {
 	$('#upload_form').ajaxForm(options);
 	$('#thumbnail_upload_button').click(function(e) {
 		console.log("CLICKED");
+		console.log(main_height, main_width)
 		if(main_width === undefined) {
 			return false;
 		} else {
