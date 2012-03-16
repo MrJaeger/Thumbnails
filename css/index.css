@@ -18,3 +18,11 @@ form {
 	width: 156px;
 	height: 156px;
 }
+
+ul#thumbnail_list {
+	list-style-type: none;
+}
+
+ul#thumbnail_list li {
+	display: inline;
+}
