@@ -14,7 +14,8 @@ form {
 }
 
 #thumbnail_upload_button {
-	margin: 170px, 0, 0, 110px;
+	margin-top: 170px;
+	margin-left: 110px;
 }
 
 #thumbnail {
