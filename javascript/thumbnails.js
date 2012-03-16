@@ -28,5 +28,5 @@ function output_update(data, sText, xhr, $form) {
 }
 
 function update_thumbnail(img, selection) {
-	
+	console.log(img);
 }
