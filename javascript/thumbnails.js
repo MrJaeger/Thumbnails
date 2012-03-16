@@ -46,7 +46,7 @@ function output_update(data, sText, xhr, $form) {
 		var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#thumbnail > img').remove();
 		$('#thumbnail').append(thumbnail_image);
-		$('#thumbnail_upload_button').css({'top': '170px', 'left': main_width+110});
+		$('#thumbnail_upload_button').css({'top': '170px', 'left': 110});
 	}
 }
 
