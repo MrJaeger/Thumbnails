@@ -21,7 +21,7 @@ $(function () {
 			$.post("./upload_thumbnail.php", image_info, function(imageName) {
 				var newThumbnail = "<li><img src=\"assets/thumbnails/" + imageName + "\" /></li>";
 				$('$thumbnail_list').append(newThumbnail);
-			}
+			});
 			return true;
 		}
 	}
