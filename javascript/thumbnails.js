@@ -7,7 +7,7 @@ $(function () {
 	};
 	$('#upload_form').ajaxForm(options);
 	$('#thumbnail_upload_button').click(function(e) {
-		if(main_width === undefined) {
+		if(select_height === undefined) {
 			return false;
 		} else {
 			var image_info = {
@@ -58,5 +58,9 @@ $(function () {
 			marginLeft: '-' + Math.round(xScale * selection.x1) + 'px',
 			marginTop: '-' + Math.round(yScale * selection.y1) + 'px'
 		});
+		select_height = selection.height;
+		select_width = selection.width;
+		select_x = selection.x1;
+		select_y = selection.y1;
 	}
 });
