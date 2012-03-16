@@ -6,7 +6,7 @@ $(function () {
 		success: output_update
 	};
 	$('#upload_form').ajaxForm(options);
-	$('#thumbnail #thumbnail_upload_button').click(function(e) {
+	$('#thumbnail_upload_button').click(function(e) {
 		if(main_width === undefined) {
 			return false;
 		} else {
