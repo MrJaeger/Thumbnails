@@ -65,12 +65,16 @@ class SimpleImage {
       $height = $this->getheight() * $scale/100;
       $this->resize($width,$height);
    }
+
+   function make_thumbnail($x,$y) {
+
+   }
  
-   function resize($width,$height) {
+   function resize($width,$height,$x=0,$y=0) {
       $new_image = imagecreatetruecolor($width, $height);
-      imagecopyresampled($new_image, $this->image, 0, 0, 0, 0, $width, $height, $this->getWidth(), $this->getHeight());
+      imagecopyresampled($new_image, $this->image, 0, 0, $x, $y, $width, $height, $this->getWidth(), $this->getHeight());
       $this->image = $new_image;
-   }      
+   }           
  
 }
 
