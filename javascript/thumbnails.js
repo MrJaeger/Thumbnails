@@ -12,6 +12,7 @@ function validate(data, jqForm, options) {
 	if(data.length != 1 || !data[0]["value"]["fileName"].match(imageRegExp)) {
 		return false;
 	} else {
+		$('[class^=imgareaselect]').remove();
 		return true;
 	}
 }
