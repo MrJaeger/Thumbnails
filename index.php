@@ -20,5 +20,6 @@
 			<input name="image_file" type="file" />
 			<input type="submit" value="Upload" />
 		</form>
+		<div id="status"></div>
 	</body>
 </html>

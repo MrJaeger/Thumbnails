@@ -25,8 +25,11 @@ $(function () {
 	});
 
 	function validate(data, jqForm, options) {
+		$('#status').html("");
 		var image_reg_exp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
 		if(data.length != 1 || !data[0]["value"]["fileName"].match(image_reg_exp)) {
+			var failure = "<p>Sorry we were not able to upload the file you requested</p>";
+			$("#status").append(failure);
 			return false;
 		} else {
 			$('[class^=imgareaselect]').remove();
