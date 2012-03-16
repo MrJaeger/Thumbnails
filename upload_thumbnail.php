@@ -6,7 +6,8 @@ $width = $_POST['width'];
 $height = $_POST['height'];
 $x = $_POST['x'];
 $y = $_POST['y'];
-$name = $_POST['name'];
+//$name = $_POST['name'];
+$name = "gobeldygook";
 $id = uniqid();
 
 $thumbnail = new SimpleImage();
