@@ -21,7 +21,7 @@ form {
 
 ul#thumbnail_list {
 	clear: both;
-	margin-left: 0px;
+	padding: 0px;
 	margin-bottom: 10px;
 	list-style-type: none;
 }
