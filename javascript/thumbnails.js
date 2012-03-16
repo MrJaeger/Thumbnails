@@ -1,11 +1,27 @@
 $(function () {
-	var main_height, main_width;
+	var main_height, main_width, select_height, select_width, select_x, select_y, file_name;
 	var options = {
 		beforeSubmit: validate,
 		type: 'json',
 		success: output_update
 	};
 	$('#upload_form').ajaxForm(options);
+	$('#thumbnail #thumbnail_upload_form').click(function(e) {
+		if(main_width === undefined) {
+			return false;
+		} else {
+			var image_info = {
+				width: select_width,
+				height: select_height,
+				x: select_x,
+				y: select_y,
+				name: file_name
+			}
+			$.post("./upload_thumbnail.php", image_info, function(data) {
+				console.log(data);
+			});
+		}
+	})
 });
 
 function validate(data, jqForm, options) {
@@ -21,6 +37,7 @@ function validate(data, jqForm, options) {
 function output_update(data, sText, xhr, $form) {
 	var imgData = $.parseJSON(data);
 	if(imgData["error"] === undefined) {
+		file_name = imgData["name"];
 		main_height = imgData["height"];
 		main_width = imgData["width"];
 		var main_image = "<img id=\"main\" src=\"assets/full_size/" + imgData["name"] + "\" />";
