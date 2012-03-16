@@ -17,16 +17,16 @@ $(function () {
 				y: select_y,
 				name: file_name
 			}
-			$.post("./upload_thumbnail.php", image_info, function(imageName) {
-				var newThumbnail = "<li><img style=\"margin-top: 10px;\" src=\"assets/thumbnails/" + imageName + "\" /></li>";
-				$('#thumbnail_list').append(newThumbnail);
+			$.post("./upload_thumbnail.php", image_info, function(image_name) {
+				var new_thumbnail = "<li><img style=\"margin-top: 10px;\" src=\"assets/thumbnails/" + image_name + "\" /></li>";
+				$('#thumbnail_list').append(new_thumbnail);
 			});
 		}
 	});
 
 	function validate(data, jqForm, options) {
-		var imageRegExp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
-		if(data.length != 1 || !data[0]["value"]["fileName"].match(imageRegExp)) {
+		var image_reg_exp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
+		if(data.length != 1 || !data[0]["value"]["fileName"].match(image_reg_exp)) {
 			return false;
 		} else {
 			$('[class^=imgareaselect]').remove();
@@ -35,15 +35,16 @@ $(function () {
 	}
 
 	function output_update(data, sText, xhr, $form) {
-		var imgData = $.parseJSON(data);
-		if(imgData["error"] === undefined) {
-			file_name = imgData["name"];
-			main_height = imgData["height"];
-			main_width = imgData["width"];
-			var main_image = "<img id=\"main\" src=\"assets/full_size/" + imgData["name"] + "\" />";
+		var img_data = $.parseJSON(data);
+		if(img_data["error"] === undefined) {
+			$('#thumbnail_list').html("");
+			file_name = img_data["name"];
+			main_height = img_data["height"];
+			main_width = img_data["width"];
+			var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
 			$('#uploaded').html("").append(main_image);
 			$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
-			var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + imgData["name"] + "\" />";
+			var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + img_data["name"] + "\" />";
 			$('#thumbnail > img').remove();
 			$('#thumbnail').append(thumbnail_image);
 			$('#thumbnail_upload_button').css({'top': '170px', 'left': '110px'});
