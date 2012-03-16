@@ -10,11 +10,10 @@
 	</head>
 	<body>
 		<h1>Thumbnails</h1>
-		<ul id="thumbnail_list"></ul>
 		<div id="uploaded"></div>
 		<button id="thumbnail_upload_button">Save Thumbnail</button>
-		<div id="thumbnail">
-		</div>
+		<div id="thumbnail"></div>
+		<ul id="thumbnail_list"></ul>
 		<form id="upload_form" action="upload.php" method="post">
 			<label>Picture to Upload:</label>
 			<input name="image_file" type="file" />
