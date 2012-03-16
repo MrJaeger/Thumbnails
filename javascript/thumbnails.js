@@ -24,7 +24,7 @@ $(function () {
 			});
 			return true;
 		}
-	}
+	});
 
 	function output_update(data, sText, xhr, $form) {
 		var imgData = $.parseJSON(data);
