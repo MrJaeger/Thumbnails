@@ -18,7 +18,7 @@ $(function () {
 				name: file_name
 			}
 			$.post("./upload_thumbnail.php", image_info, function(imageName) {
-				var newThumbnail = "<li><img src=\"assets/thumbnails/" + imageName + "\" /></li>";
+				var newThumbnail = "<li><img style=\"margin-top: 10px;\" src=\"assets/thumbnails/" + imageName + "\" /></li>";
 				$('#thumbnail_list').append(newThumbnail);
 			});
 		}
