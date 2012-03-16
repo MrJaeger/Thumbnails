@@ -4,14 +4,17 @@ form {
 	margin: 10px 0px;
 }
 
-#uploaded {
+#uploaded, #thumbnail, #thumbnail_upload_button {
 	float: left;
 }
 
 #thumbnail, #thumbnail_upload_button {
-	float: right;
 	position: relative;
 	display: inline-block;
+}
+
+#thumbnail_upload_button {
+	top: 160px;
 }
 
 #thumbnail {
