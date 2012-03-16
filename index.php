@@ -13,6 +13,7 @@
 		<div id="uploaded"></div>
 		<button id="thumbnail_upload_button">Save Thumbnail</button>
 		<div id="thumbnail"></div>
+		<h1>List of Created Thumbnails</h1>
 		<ul id="thumbnail_list"></ul>
 		<form id="upload_form" action="upload.php" method="post">
 			<label>Picture to Upload:</label>
