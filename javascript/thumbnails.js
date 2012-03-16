@@ -17,6 +17,7 @@ $(function () {
 				y: select_y,
 				name: file_name
 			}
+			console.log(image_info);
 			$.post("./upload_thumbnail.php", image_info, function(data) {
 				console.log(data);
 			});
