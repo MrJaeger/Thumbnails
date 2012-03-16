@@ -16,4 +16,8 @@ $thumbnail->resizeToHeight(156);
 $thumbnail->resizeToWidth(156);
 $thumbnail->save("assets/thumbnails/".$id.$name, $thumbnail->image_type);
 
+$id.=$name;
+
+echo $id;
+
 ?>
