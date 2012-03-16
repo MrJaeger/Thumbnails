@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="css/index.css" type="text/css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script src="http://malsup.github.com/jquery.form.js"></script> 
+		<script src="./javascript/jquery.imgareaselect.min.js"></script>
 		<script src="./javascript/thumbnails.js"></script>
 	</head>
 	<body>

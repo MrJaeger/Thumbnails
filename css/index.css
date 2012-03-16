@@ -6,3 +6,10 @@ input {
 #uploaded, #thumbnail {
 	display: inline-block;
 }
+
+#thumbnail {
+	position: relative;
+	overflow: hidden;
+	width: 156px;
+	height: 156px;
+}
