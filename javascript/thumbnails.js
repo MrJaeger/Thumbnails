@@ -38,15 +38,15 @@ $(function () {
 	}
 
 	function output_update(data, sText, xhr, $form) {
-		file_name = img_data["name"];
-		main_height = img_data["height"];
-		main_width = img_data["width"];
 		var success = "<p>Picture successfully uploaded!</p>";
 		var img_data = $.parseJSON(data);
 		var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
 		var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + img_data["name"] + "\" />";
-		$('#thumbnail_list').html("");
+		file_name = img_data["name"];
+		main_height = img_data["height"];
+		main_width = img_data["width"];
 		$('#status').append(success)
+		$('#thumbnail_list').html("");
 		$('#uploaded').html("").append(main_image);
 		$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
 		$('#thumbnail > img').remove();
