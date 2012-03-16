@@ -15,7 +15,7 @@
 		<div id="thumbnail"></div>
 		<h1 style="clear: both;">List of Created Thumbnails</h1>
 		<ul id="thumbnail_list"></ul>
-		<form id="upload_form" action="upload.php" method="post">
+		<form id="upload_form" action="api/upload.php" method="post">
 			<label>Picture to Upload:</label>
 			<input name="image_file" type="file" />
 			<input type="submit" value="Upload" />

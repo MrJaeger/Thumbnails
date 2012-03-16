@@ -43,7 +43,7 @@ $(function () {
 				y: select_y,
 				name: file_name
 			}
-			$.post("./upload_thumbnail.php", image_info, function(image_name) {
+			$.post("api/upload_thumbnail.php", image_info, function(image_name) {
 				var new_thumbnail = "<li><img style=\"margin-top: 10px;\" src=\"assets/thumbnails/" + image_name + "\" /></li>";
 				$('#thumbnail_list').append(new_thumbnail);
 			});
