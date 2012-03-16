@@ -13,10 +13,6 @@ form {
 	display: inline-block;
 }
 
-#thumbnail_upload_button {
-	top: 160px;
-}
-
 #thumbnail {
 	overflow: hidden;
 	width: 156px;

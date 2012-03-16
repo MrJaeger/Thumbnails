@@ -6,7 +6,7 @@ $(function () {
 		success: output_update
 	};
 	$('#upload_form').ajaxForm(options);
-	$('#thumbnail #thumbnail_upload_form').click(function(e) {
+	$('#thumbnail #thumbnail_upload_button').click(function(e) {
 		if(main_width === undefined) {
 			return false;
 		} else {
@@ -46,6 +46,7 @@ function output_update(data, sText, xhr, $form) {
 		var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#thumbnail > img').remove();
 		$('#thumbnail').append(thumbnail_image);
+		$('#thumbnail_upload_button').css('top': '170px', 'right': main_width+110)
 	}
 }
 
