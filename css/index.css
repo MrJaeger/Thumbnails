@@ -7,10 +7,6 @@ input {
 	float: left;
 }
 
-#thumbnail, #thumbnail_upload_button{
-	clear: both;
-}
-
 #thumbnail {
 	position: relative;
 	overflow: hidden;
