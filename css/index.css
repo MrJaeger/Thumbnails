@@ -13,7 +13,3 @@ input {
 	width: 156px;
 	height: 156px;
 }
-
-#thumbnail_upload_button {
-	z-index: 100;
-}
