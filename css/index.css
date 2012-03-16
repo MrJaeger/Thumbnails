@@ -2,3 +2,7 @@ input {
 	display: block;
 	margin: 10px 0px;
 }
+
+#uploaded, #thumbnail {
+	display: inline-block;
+}
