@@ -25,4 +25,5 @@ ul#thumbnail_list {
 
 ul#thumbnail_list li {
 	display: inline;
+	margin-left: 20px;
 }
