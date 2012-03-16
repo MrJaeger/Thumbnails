@@ -6,7 +6,7 @@ $(function () {
 		success: output_update
 	};
 	$('#upload_form').ajaxForm(options);
-	$('#thumbnail #thumbnail_upload_button').click(function(e) {
+	$('#thumbnail_upload_button').click(function(e) {
 		if(main_width === undefined) {
 			return false;
 		} else {
@@ -45,7 +45,7 @@ $(function () {
 			var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + imgData["name"] + "\" />";
 			$('#thumbnail > img').remove();
 			$('#thumbnail').append(thumbnail_image);
-			$('#thumbnail_upload_button').css({'top': '170px', 'right': '110px'});
+			$('#thumbnail_upload_button').css({'top': '170px', 'left': '110px'});
 		}
 	}
 
