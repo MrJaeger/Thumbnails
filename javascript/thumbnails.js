@@ -1,11 +1,37 @@
 $(function () {
+	/*
+		main_height: the height of the image being uploaded
+		main_width: the width of the image being uploaded
+
+		NOTE: Both main_height and main_width are what the size of the image on the page is.  If the image needed to be scaled down because
+		the original image was too large, main_height and main_width reflect that.
+
+		IMGAREA VARIABLES ---
+
+		select_height: the height of the selector box
+		select_width: the width of the selector box
+		select_x: the x position of the top left corner of the selector box with respect to the image
+		select_y: the y position of the top left corner of the selector box with respect to the image
+
+		END IMGAREA VARIABLES ---
+
+		file_name: the name of the file uploaded
+	*/
+
 	var main_height, main_width, select_height, select_width, select_x, select_y, file_name;
+
+	/* Options for the Ajax Form helper */
+
 	var options = {
 		beforeSubmit: validate,
 		type: 'json',
 		success: output_update
 	};
 	$('#upload_form').ajaxForm(options);
+
+	/* When clicked the thumbnail upload button first checks if a selector box has been created (by checking if select_heigh has ever been set).
+	   If it has the thumbnail image is uploaded. */
+
 	$('#thumbnail_upload_button').click(function(e) {
 		if(select_height === undefined) {
 			return false;
@@ -24,6 +50,9 @@ $(function () {
 		}
 	});
 
+	/*  validate first checks if the submitted file is an image.  If it is it then proceeds to upload that image.  If not a
+		message is created to tell the user that the file could not be uploaded successfully */
+
 	function validate(data, jqForm, options) {
 		$('#status').html("");
 		var image_reg_exp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
@@ -36,6 +65,9 @@ $(function () {
 			return true;
 		}
 	}
+
+	/*  output_update is run after an image has been downloaded.  It handles adding the image to the page as well as setting
+	 	up the neccessary other elements for thumbnail creation. */
 
 	function output_update(data, sText, xhr, $form) {
 		var success = "<p>Picture successfully uploaded!</p>";
@@ -53,6 +85,9 @@ $(function () {
 		$('#thumbnail').append(thumbnail_image);
 		$('#thumbnail_upload_button').css({'top': '170px', 'left': '110px'});
 	}
+
+	/*  update_thumbnail is run every time the selector box is moved or changes shape.  It updates the neccessary variables so that thumbnails
+		may then be created based on the selector box */
 
 	function update_thumbnail(img, selection) {
 		var xScale = 156/selection.width;
