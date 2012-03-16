@@ -22,5 +22,7 @@ function output_update(data, sText, xhr, $form) {
 		var appended_image = "<img src=\"assets/full_size/" + imgData["name"] + "\" />";
 		$('#uploaded').html("");
 		$('#uploaded').append(appended_image);
+		$('#thumbnail').html("");
+		$('#thumbnail').append(appended_image);
 	}
 }
