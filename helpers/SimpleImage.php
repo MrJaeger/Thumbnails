@@ -66,11 +66,17 @@ class SimpleImage {
       $this->resize($width,$height);
    }
  
-   function resize($width,$height,$x=0,$y=0) {
+   function resize($width,$height) {
       $new_image = imagecreatetruecolor($width, $height);
-      imagecopyresampled($new_image, $this->image, 0, 0, $x, $y, $width, $height, $this->getWidth(), $this->getHeight());
+      imagecopyresampled($new_image, $this->image, 0, 0, 0, 0, $width, $height, $this->getWidth(), $this->getHeight());
       $this->image = $new_image;
-   }           
+   }
+
+   function resize_within_image($width, $height, $x, $y) {
+      $new_image = imagecreatetruecolor($width, $height);
+      imagecopyresampled($new_image, $this->image, 0, 0, $x, $y, $width, $height, $width, $height);
+      $this->image = $new_image;
+   }
  
 }
 
