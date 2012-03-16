@@ -9,6 +9,7 @@ form {
 }
 
 #thumbnail {
+	display: inline-block;
 	position: relative;
 	overflow: hidden;
 	width: 156px;
