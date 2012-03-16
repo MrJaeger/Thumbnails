@@ -16,15 +16,24 @@ $(function () {
 				x: select_x,
 				y: select_y,
 				name: file_name
-			};
+			}
 			console.log(image_info);
 			$.post("./upload_thumbnail.php", image_info, function(imageName) {
 				var newThumbnail = "<li><img src=\"assets/thumbnails/" + imageName + "\" /></li>";
 				$('$thumbnail_list').append(newThumbnail);
 			});
-			return true;
 		}
 	});
+
+	function validate(data, jqForm, options) {
+		var imageRegExp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
+		if(data.length != 1 || !data[0]["value"]["fileName"].match(imageRegExp)) {
+			return false;
+		} else {
+			$('[class^=imgareaselect]').remove();
+			return true;
+		}
+	}
 
 	function output_update(data, sText, xhr, $form) {
 		var imgData = $.parseJSON(data);
