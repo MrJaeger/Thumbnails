@@ -54,6 +54,7 @@ $(function () {
 
 	function output_update(data, sText, xhr, $form) {
 		$("#status").html("");
+		console.log(data);
 		if(data["error"] === undefined) {
 		    $('[class^=imgareaselect]').remove();
 			var success = "<p>Picture successfully uploaded!</p>";
