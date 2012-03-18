@@ -53,6 +53,7 @@ $(function () {
 	 	up the neccessary other elements for thumbnail creation.  Otherwise it appends an error message to the page. */
 
 	function output_update(data, sText, xhr, $form) {
+		$("#status").html("");
 		if(data["error"] === undefined) {
 		    $('[class^=imgareaselect]').remove();
 			var success = "<p>Picture successfully uploaded!</p>";
