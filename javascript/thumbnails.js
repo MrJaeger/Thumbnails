@@ -54,11 +54,10 @@ $(function () {
 
 	function output_update(data, sText, xhr, $form) {
 		$("#status").html("");
-		console.log(data);
+		var img_data = $.parseJSON(data);
 		if(data["error"] === undefined) {
 		    $('[class^=imgareaselect]').remove();
 			var success = "<p>Picture successfully uploaded!</p>";
-			var img_data = $.parseJSON(data);
 			var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
 			var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + img_data["name"] + "\" />";
 			file_name = img_data["name"];
