@@ -55,7 +55,7 @@ $(function () {
 	function output_update(data, sText, xhr, $form) {
 		$("#status").html("");
 		var img_data = $.parseJSON(data);
-		if(data["error"] === undefined) {
+		if(img_data["error"] === undefined) {
 		    $('[class^=imgareaselect]').remove();
 			var success = "<p>Picture successfully uploaded!</p>";
 			var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
