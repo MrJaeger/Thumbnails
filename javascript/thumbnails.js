@@ -23,7 +23,6 @@ $(function () {
 	/* Options for the Ajax Form helper */
 
 	var options = {
-		beforeSubmit: validate,
 		type: 'json',
 		success: output_update
 	};
@@ -50,42 +49,30 @@ $(function () {
 		}
 	});
 
-	/*  validate first checks if the submitted file is an image.  If it is it then proceeds to upload that image.  If not a
-		message is created to tell the user that the file could not be uploaded successfully */
-
-	function validate(data, jqForm, options) {
-		$('#status').html("");
-		var image_reg_exp = /((.\.png$)|(.\.jpg$)|(.\.gif$))/;
-		if(data.length != 1 || !data[0]["value"]["fileName"].match(image_reg_exp)) {
-			var failure = "<p>Sorry we were not able to upload the file you requested</p>";
-			$("#status").append(failure);
-			return false;
-		} else {
-			$('[class^=imgareaselect]').remove();
-			return true;
-		}
-	}
-
-	/*  output_update is run after an image has been downloaded.  It handles adding the image to the page as well as setting
-	 	up the neccessary other elements for thumbnail creation. */
+	/*  output_update is run after an image has been downloaded.  If the file was a legal file to be uploaded, it handles adding the image to the page as well as setting
+	 	up the neccessary other elements for thumbnail creation.  Otherwise it appends an error message to the page. */
 
 	function output_update(data, sText, xhr, $form) {
-		console.log(data);
-		return;
-		var success = "<p>Picture successfully uploaded!</p>";
-		var img_data = $.parseJSON(data);
-		var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
-		var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + img_data["name"] + "\" />";
-		file_name = img_data["name"];
-		main_height = img_data["height"];
-		main_width = img_data["width"];
-		$('#status').append(success)
-		$('#thumbnail_list').html("");
-		$('#uploaded').html("").append(main_image);
-		$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
-		$('#thumbnail > img').remove();
-		$('#thumbnail').append(thumbnail_image);
-		$('#thumbnail_upload_button').css({'top': '170px', 'left': '110px'});
+		if(data["error"] === undefined) {
+		    $('[class^=imgareaselect]').remove();
+			var success = "<p>Picture successfully uploaded!</p>";
+			var img_data = $.parseJSON(data);
+			var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
+			var thumbnail_image = "<img style=\"position: relative;\" src=\"assets/full_size/" + img_data["name"] + "\" />";
+			file_name = img_data["name"];
+			main_height = img_data["height"];
+			main_width = img_data["width"];
+			$('#status').append(success)
+			$('#thumbnail_list').html("");
+			$('#uploaded').html("").append(main_image);
+			$('#uploaded #main').imgAreaSelect({aspectRatio: '1:1', onSelectChange: update_thumbnail});
+			$('#thumbnail > img').remove();
+			$('#thumbnail').append(thumbnail_image);
+			$('#thumbnail_upload_button').css({'top': '170px', 'left': '110px'});
+		} else {
+			var failure = "<p>Sorry we were not able to upload the file you requested</p>";
+			$("#status").append(failure);
+		}
 	}
 
 	/*  update_thumbnail is run every time the selector box is moved or changes shape.  It updates the neccessary variables so that thumbnails
