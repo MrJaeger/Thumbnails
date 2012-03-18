@@ -70,6 +70,8 @@ $(function () {
 	 	up the neccessary other elements for thumbnail creation. */
 
 	function output_update(data, sText, xhr, $form) {
+		console.log(data);
+		return;
 		var success = "<p>Picture successfully uploaded!</p>";
 		var img_data = $.parseJSON(data);
 		var main_image = "<img id=\"main\" src=\"assets/full_size/" + img_data["name"] + "\" />";
