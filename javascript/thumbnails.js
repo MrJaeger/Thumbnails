@@ -71,7 +71,6 @@ $(function () {
 			$('#thumbnail').append(thumbnail_image);
 			$('#thumbnail_upload_button').css({'top': '170px', 'left': '110px'});
 		} else {
-			console.log("error recieved");
 			var failure = "<p>Sorry we were not able to upload the file you requested</p>";
 			$("#status").append(failure);
 		}
